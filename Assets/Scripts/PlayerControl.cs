@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour {
         if (Input.GetButtonDown("Jump"))
         {
             mRigidBody.AddForce(Vector2.up * jumpFactor);
-            mTransform.localScale = new Vector3(mTransform.localScale.x * growingFactor, mTransform.localScale.x * growingFactor, 1);
+            this.Grow();
         }
 
         bool isPressingDown = Input.GetAxis("Vertical") < 0;
@@ -60,6 +60,11 @@ public class PlayerControl : MonoBehaviour {
         }
 
         return null;
+    }
+
+    private void Grow()
+    {
+        mTransform.localScale = new Vector3(mTransform.localScale.x * growingFactor, mTransform.localScale.x * growingFactor, 1);
     }
 
     private void Shrink()
