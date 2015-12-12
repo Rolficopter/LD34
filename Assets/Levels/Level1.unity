@@ -153,6 +153,10 @@ Prefab:
       propertyPath: growingFactor
       value: 1.04999995
       objectReference: {fileID: 0}
+    - target: {fileID: 11451752, guid: ccc88a043b83a494d8389b7d665474fe, type: 2}
+      propertyPath: jumpFactor
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccc88a043b83a494d8389b7d665474fe, type: 2}
   m_IsPrefabParent: 0
