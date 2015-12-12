@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerControl : MonoBehaviour {
 
     Rigidbody2D mRigidBody;
-    private float flightSpeed = 5;
+    public float jumpFactor = 200;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,7 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("Jump"))
         {
-            mRigidBody.AddForce(Vector2.up * 1000);
+            mRigidBody.AddForce(Vector2.up * jumpFactor);
         }
 	}
 }
