@@ -68,6 +68,7 @@ public class PlayerControl : MonoBehaviour {
 
     private void Grow()
     {
+        Debug.Log("Growing player...");
         mTransform.localScale = new Vector3(mTransform.localScale.x * growingFactor, mTransform.localScale.x * growingFactor, 1);
     }
 
@@ -75,6 +76,5 @@ public class PlayerControl : MonoBehaviour {
     {
         Debug.Log("Shrinking player...");
         mTransform.localScale = new Vector3(mTransform.localScale.x / growingFactor, mTransform.localScale.x / growingFactor, 1);
-        // TODO
     }
 }
