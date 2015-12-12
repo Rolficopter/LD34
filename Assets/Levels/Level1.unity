@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 78566886}
   - 61: {fileID: 78566887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StartBlocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1494256503}
   - 61: {fileID: 1494256504}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EndBlocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,6 +412,10 @@ Prefab:
       propertyPath: m_Color.a
       value: .377999991
       objectReference: {fileID: 0}
+    - target: {fileID: 176116, guid: 7f6ff83f7bcfbba46a2c407f9da745ad, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f6ff83f7bcfbba46a2c407f9da745ad, type: 2}
   m_IsPrefabParent: 0
@@ -474,6 +478,10 @@ Prefab:
       propertyPath: m_Color.a
       value: .503000021
       objectReference: {fileID: 0}
+    - target: {fileID: 140990, guid: 7cb34c00cc0cad946a0f6f821ee22e09, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cb34c00cc0cad946a0f6f821ee22e09, type: 2}
   m_IsPrefabParent: 0
@@ -485,7 +493,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2049732245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
