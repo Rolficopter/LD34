@@ -65,6 +65,7 @@ public class PlayerControl : MonoBehaviour {
     private void Shrink()
     {
         Debug.Log("Shrinking player...");
+        mTransform.localScale = new Vector3(mTransform.localScale.x / growingFactor, mTransform.localScale.x / growingFactor, 1);
         // TODO
     }
 }
