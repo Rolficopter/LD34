@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &107482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 454740}
+  - 61: {fileID: 6137012}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &130870
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,12 +61,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.60000002, y: 1.54999995, z: 0}
+  m_LocalPosition: {x: -3.15690088, y: .653830409, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 484020}
+  - {fileID: 454740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &454740
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107482}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -4.26000023, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 420404}
+  m_RootOrder: 1
 --- !u!4 &484020
 Transform:
   m_ObjectHideFlags: 1
@@ -92,6 +121,19 @@ BoxCollider2D:
   m_Offset: {x: -.629999995, y: -.0599999987}
   serializedVersion: 2
   m_Size: {x: 6.53999996, y: 9.11999989}
+--- !u!61 &6137012
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107482}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!82 &8289412
 AudioSource:
   m_ObjectHideFlags: 1
@@ -173,7 +215,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92ff68c344243e49a61ff33bc91399d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 454740}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
   jumpFactor: 200
+  growingFactor: 1.00999999
 --- !u!114 &11492860
 MonoBehaviour:
   m_ObjectHideFlags: 1

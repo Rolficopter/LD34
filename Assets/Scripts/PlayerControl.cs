@@ -5,6 +5,10 @@ public class PlayerControl : MonoBehaviour {
 
     Rigidbody2D mRigidBody;
     Transform mTransform;
+
+    public Transform groundCheck;
+    public LayerMask groundMask;
+
     public float jumpFactor = 200;
     public float growingFactor = 1.01f;
 
@@ -16,7 +20,7 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(groundMask))
         {
             mRigidBody.AddForce(Vector2.up * jumpFactor);
             this.Grow();
