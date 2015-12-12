@@ -45,6 +45,8 @@ public class PlayerControl : MonoBehaviour {
                 }
             }
         }
+
+        mRigidBody.velocity = new Vector2(3, mRigidBody.velocity.y);
 	}
 
     private GameObject GetCollidingPowerUp()
