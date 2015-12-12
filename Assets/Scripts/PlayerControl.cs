@@ -8,7 +8,10 @@ public class PlayerControl : MonoBehaviour {
     public Transform groundCheck;
     public LayerMask groundMask;
 
+    [Range(0.0f, 1000.0f)]
     public float jumpFactor = 200;
+    [Range(1.01f, 2.0f)]
+    [Tooltip("The amount the player grows with each jump and shrinks with each power-up.")]
     public float growingFactor = 1.01f;
 
 	// Use this for initialization
