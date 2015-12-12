@@ -566,10 +566,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6183252, guid: 852d2e6ca3c3222489e31b2e681b06f4, type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 186670, guid: 852d2e6ca3c3222489e31b2e681b06f4, type: 2}
       propertyPath: m_Name
       value: PowerUp 1
