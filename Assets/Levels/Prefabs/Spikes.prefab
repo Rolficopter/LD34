@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 442466}
   - 212: {fileID: 21256810}
-  - 61: {fileID: 6103280}
+  - 58: {fileID: 5890766}
   m_Layer: 8
   m_Name: Top Spike
   m_TagString: Untagged
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 408536}
   - 212: {fileID: 21279844}
-  - 61: {fileID: 6108542}
+  - 58: {fileID: 5891594}
   m_Layer: 8
   m_Name: Bottom Spike
   m_TagString: Untagged
@@ -88,8 +88,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441810}
   m_RootOrder: 1
---- !u!61 &6103280
-BoxCollider2D:
+--- !u!58 &5890766
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -98,11 +98,11 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1.30999994}
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
---- !u!61 &6108542
-BoxCollider2D:
+  m_Radius: 2
+--- !u!58 &5891594
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -111,9 +111,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1.37}
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Radius: 2
 --- !u!114 &11487054
 MonoBehaviour:
   m_ObjectHideFlags: 1
