@@ -234,8 +234,8 @@ Camera:
   m_GameObject: {fileID: 966142182}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -360,6 +360,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 21214074, guid: 7f6ff83f7bcfbba46a2c407f9da745ad, type: 2}
+      propertyPath: m_Color.a
+      value: .377999991
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f6ff83f7bcfbba46a2c407f9da745ad, type: 2}
   m_IsPrefabParent: 0
@@ -405,6 +409,22 @@ Prefab:
     - target: {fileID: 420480, guid: 7cb34c00cc0cad946a0f6f821ee22e09, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 21226164, guid: 7cb34c00cc0cad946a0f6f821ee22e09, type: 2}
+      propertyPath: m_Color.r
+      value: .625
+      objectReference: {fileID: 0}
+    - target: {fileID: 21226164, guid: 7cb34c00cc0cad946a0f6f821ee22e09, type: 2}
+      propertyPath: m_Color.g
+      value: .625
+      objectReference: {fileID: 0}
+    - target: {fileID: 21226164, guid: 7cb34c00cc0cad946a0f6f821ee22e09, type: 2}
+      propertyPath: m_Color.b
+      value: .625
+      objectReference: {fileID: 0}
+    - target: {fileID: 21226164, guid: 7cb34c00cc0cad946a0f6f821ee22e09, type: 2}
+      propertyPath: m_Color.a
+      value: .503000021
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7cb34c00cc0cad946a0f6f821ee22e09, type: 2}
