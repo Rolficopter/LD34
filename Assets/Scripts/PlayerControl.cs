@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -76,5 +75,10 @@ public class PlayerControl : MonoBehaviour {
     {
         Debug.Log("Shrinking player...");
         mTransform.localScale = new Vector3(mTransform.localScale.x / growingFactor, mTransform.localScale.x / growingFactor, 1);
+    }
+
+    public void Die()
+    {
+        Debug.Log("Player lost.");
     }
 }
