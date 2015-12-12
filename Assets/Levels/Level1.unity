@@ -205,6 +205,10 @@ BoxCollider2D:
 Transform:
   m_PrefabParentObject: {fileID: 420480, guid: 7cb34c00cc0cad946a0f6f821ee22e09, type: 2}
   m_PrefabInternal: {fileID: 2042254155}
+--- !u!4 &836715089 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 420404, guid: ccc88a043b83a494d8389b7d665474fe, type: 2}
+  m_PrefabInternal: {fileID: 22005577}
 --- !u!1 &966142182
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +222,7 @@ GameObject:
   - 124: {fileID: 966142184}
   - 81: {fileID: 966142183}
   - 45: {fileID: 966142188}
+  - 114: {fileID: 966142189}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -300,6 +305,22 @@ Skybox:
   m_GameObject: {fileID: 966142182}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 272ba847f100d4251bb8260575189042, type: 2}
+--- !u!114 &966142189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 966142182}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8238cc53530b64fbb7828c3d3bb591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 836715089}
+  damping: 1
+  lookAheadFactor: 3
+  lookAheadReturnSpeed: .5
+  lookAheadMoveThreshold: .100000001
 --- !u!4 &995202651 stripped
 Transform:
   m_PrefabParentObject: {fileID: 441810, guid: dab6ca604eb56c84597b7a78230f73f5, type: 2}

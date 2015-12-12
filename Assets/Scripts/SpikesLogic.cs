@@ -10,15 +10,6 @@ public class SpikesLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if ( this.player == null )
-        {
-            this.player = GameObject.Find("Player");
-
-            if ( player == null )
-            {
-                Debug.LogError("Player must be set.");
-            }
-        }
         this.playerCollider = this.player.GetComponent<Collider2D>();
 
         this.spikeColliders = new Collider2D[this.transform.childCount];
@@ -39,6 +30,7 @@ public class SpikesLogic : MonoBehaviour {
             }
         }
 	}
+
     private bool IsPlayerTouchingSpikes()
     {
         foreach (var spikeCollider in this.spikeColliders)
