@@ -65,7 +65,7 @@ namespace Rolficopter.LD34.Assets.Scripts
             GameObject powerUpsNode = GameObject.Find("PowerUps");
             if (powerUpsNode != null)
             {
-                BoxCollider2D playerCollider = this.gameObject.GetComponent<BoxCollider2D>();
+                PolygonCollider2D playerCollider = this.gameObject.GetComponent<PolygonCollider2D>();
 
                 foreach (var powerUpObject in powerUpsNode.transform)
                 {
