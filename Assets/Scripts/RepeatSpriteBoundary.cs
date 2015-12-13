@@ -34,6 +34,7 @@ namespace Rolficopter.LD34.Assets.Scripts
                 childSprite.sprite = sprite.sprite;
             }
             childSprite.sortingOrder = sprite.sortingOrder;
+            childSprite.material = sprite.material;
 
             // Loop through and spit out repeated tiles
             GameObject child;
