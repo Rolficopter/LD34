@@ -34,7 +34,7 @@ public class PlayerControl : MonoBehaviour {
             this.Grow();
         }
 
-        bool isPressingDown = Input.GetAxis("Vertical") < 0;
+        bool isPressingDown = Input.GetButtonDown("Shrink");
         if ( isPressingDown )
         {
             // check for down
