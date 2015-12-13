@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/Levels/LevelFinished.unity
   - enabled: 1
     path: Assets/Levels/GameOver.unity
+  - enabled: 1
+    path: Assets/Levels/Tutorial.unity
