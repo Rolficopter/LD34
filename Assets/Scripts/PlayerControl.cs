@@ -25,6 +25,8 @@ namespace Rolficopter.LD34.Assets.Scripts
         public AudioClip growSound;
         public AudioClip shrinkSound;
 
+        private Vector2 mLastTouchPosition;
+
         // Use this for initialization
         void Start()
         {
@@ -46,15 +48,20 @@ namespace Rolficopter.LD34.Assets.Scripts
             {
                 for (int i = 0; i < Input.touchCount; i++)
                 {
-                    Debug.Log(Input.GetTouch(i).phase);
+                    if (Input.GetTouch(i).phase == TouchPhase.Began)
+                    {
+                        mLastTouchPosition = Input.GetTouch(i).position;
+                    }
 
                     if (Input.GetTouch(i).phase == TouchPhase.Ended || Input.GetTouch(i).phase == TouchPhase.Stationary)
                     {
-                        if (Input.GetTouch(i).deltaPosition.y > 0)
+                        Vector2 deltaPosition = Input.GetTouch(i).position - mLastTouchPosition;
+
+                        if (deltaPosition.y > 0)
                         {
                             isPressingJump = true;
                         }
-                        else if (Input.GetTouch(i).deltaPosition.y < 0)
+                        else if (deltaPosition.y < 0)
                         {
                             isPressingDown = true;
                         }
