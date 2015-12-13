@@ -6,7 +6,7 @@ namespace Rolficopter.LD34.Assets.Scripts
     public class CameraSideFollow : MonoBehaviour
     {
 
-        public GameObject target;
+        public Transform target;
 
         // Use this for initialization
         void Start()
