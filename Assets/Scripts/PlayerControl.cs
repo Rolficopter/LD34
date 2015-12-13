@@ -81,7 +81,7 @@ public class PlayerControl : MonoBehaviour {
         Debug.Log(col.gameObject.tag);
         if (col.gameObject.tag == "LeadsToDeath")
         {
-            Application.LoadLevel(Constants.GetLevelName(Constants.Levels.GameOver));
+            Die();
         }
     }
 
@@ -104,5 +104,6 @@ public class PlayerControl : MonoBehaviour {
     public void Die()
     {
         Debug.Log("Player lost.");
+        Application.LoadLevel(Constants.GetLevelName(Constants.Levels.GameOver));
     }
 }
