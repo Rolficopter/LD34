@@ -25,9 +25,14 @@ namespace Rolficopter.LD34.Assets.Scripts
         public AudioClip growSound;
         public AudioClip shrinkSound;
 
+        private Vector2 mLastTouchPosition;
+
         // Use this for initialization
         void Start()
         {
+#if UNITY_EDITOR
+            Input.simulateMouseWithTouches = true;
+#endif
             this.mRigidBody = GetComponent<Rigidbody2D>();
             this.mTransform = GetComponent<Transform>();
             this.mAudioSource = GetComponent<AudioSource>();
@@ -36,13 +41,40 @@ namespace Rolficopter.LD34.Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetButtonDown("Jump") && groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(groundMask))
+            bool isPressingJump = Input.GetButtonDown("Jump");
+            bool isPressingDown = Input.GetButtonDown("Shrink");
+
+            if (Input.touchCount > 0)
+            {
+                for (int i = 0; i < Input.touchCount; i++)
+                {
+                    if (Input.GetTouch(i).phase == TouchPhase.Began)
+                    {
+                        mLastTouchPosition = Input.GetTouch(i).position;
+                    }
+
+                    if (Input.GetTouch(i).phase == TouchPhase.Ended || Input.GetTouch(i).phase == TouchPhase.Stationary)
+                    {
+                        Vector2 deltaPosition = Input.GetTouch(i).position - mLastTouchPosition;
+
+                        if (deltaPosition.y > 0)
+                        {
+                            isPressingJump = true;
+                        }
+                        else if (deltaPosition.y < 0)
+                        {
+                            isPressingDown = true;
+                        }
+                    }
+                }
+            }
+
+            if (isPressingJump && groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(groundMask))
             {
                 mRigidBody.AddForce(Vector2.up * jumpFactor);
                 this.Grow();
             }
 
-            bool isPressingDown = Input.GetButtonDown("Shrink");
             if (isPressingDown)
             {
                 // check for down
