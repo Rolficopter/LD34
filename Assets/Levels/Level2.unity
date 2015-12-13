@@ -268,6 +268,48 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 461238, guid: 49baeb694713d654383a917596192b20, type: 2}
   m_PrefabInternal: {fileID: 1575215883}
+--- !u!1001 &847829126
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 425496, guid: 0e31074097bb9de4ab49accc40f143f7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10.1999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 425496, guid: 0e31074097bb9de4ab49accc40f143f7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425496, guid: 0e31074097bb9de4ab49accc40f143f7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425496, guid: 0e31074097bb9de4ab49accc40f143f7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425496, guid: 0e31074097bb9de4ab49accc40f143f7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425496, guid: 0e31074097bb9de4ab49accc40f143f7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 425496, guid: 0e31074097bb9de4ab49accc40f143f7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 425496, guid: 0e31074097bb9de4ab49accc40f143f7, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0e31074097bb9de4ab49accc40f143f7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &966142182
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +398,7 @@ Transform:
   m_Children:
   - {fileID: 1054538853}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!45 &966142188
 Skybox:
   m_ObjectHideFlags: 0
@@ -590,7 +632,7 @@ Transform:
   - {fileID: 1352385623}
   - {fileID: 1144666855}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1001 &1212550975
 Prefab:
   m_ObjectHideFlags: 0
@@ -904,7 +946,7 @@ Transform:
   - {fileID: 995202651}
   - {fileID: 824148965}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &2091170210
 Prefab:
   m_ObjectHideFlags: 0
