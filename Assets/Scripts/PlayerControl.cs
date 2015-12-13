@@ -118,7 +118,6 @@ namespace Rolficopter.LD34.Assets.Scripts
 
         void OnCollisionEnter2D(Collision2D col)
         {
-            Debug.Log(col.gameObject.tag);
             if (col.gameObject.tag == "LeadsToDeath")
             {
                 Die();
