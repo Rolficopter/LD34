@@ -11,6 +11,7 @@ namespace Rolficopter.LD34.Assets.Scripts
             Level2,
             Level3,
             Level4,
+            Level5,
             LevelFinished,
             GameOver
         }
