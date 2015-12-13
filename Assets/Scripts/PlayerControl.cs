@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Rolficopter.LD34.Assets.Scripts;
+using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -73,6 +74,15 @@ public class PlayerControl : MonoBehaviour {
         }
 
         return null;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log(col.gameObject.tag);
+        if (col.gameObject.tag == "LeadsToDeath")
+        {
+            Application.LoadLevel(Constants.GetLevelName(Constants.Levels.GameOver));
+        }
     }
 
     private void Grow()

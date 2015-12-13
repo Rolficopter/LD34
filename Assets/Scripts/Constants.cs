@@ -7,7 +7,8 @@ namespace Rolficopter.LD34.Assets.Scripts
         public enum Levels
         {
             Menu,
-            Level1
+            Level1,
+            GameOver
         }
 
         public static String GetLevelName(Levels level)
