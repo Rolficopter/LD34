@@ -27,6 +27,8 @@ namespace Rolficopter.LD34.Assets.Scripts
 
         private Vector2 mLastTouchPosition;
 
+        [Range(1.0f, 100.0f)]
+        public int growSpeed = 50;
         private Vector3 mTargetScale;
 
         // Use this for initialization
@@ -98,7 +100,7 @@ namespace Rolficopter.LD34.Assets.Scripts
 
             mRigidBody.velocity = new Vector2(this.velocity, mRigidBody.velocity.y);
 
-            mTransform.localScale = Vector3.Lerp(mTransform.localScale, mTargetScale, Time.deltaTime * 10);
+            mTransform.localScale = Vector3.Lerp(mTransform.localScale, mTargetScale, Time.deltaTime * this.growSpeed);
         }
 
         private GameObject GetCollidingPowerUp()
