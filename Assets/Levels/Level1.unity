@@ -440,7 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f859bdba718d9bb488c653f0b880c220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 130870, guid: ccc88a043b83a494d8389b7d665474fe, type: 2}
 --- !u!4 &1122398669 stripped
 Transform:
   m_PrefabParentObject: {fileID: 408926, guid: a02e91e530212184f84fc5947c46e136, type: 2}

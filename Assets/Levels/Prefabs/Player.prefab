@@ -233,8 +233,10 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  jumpFactor: 300
+  jumpFactor: 500
   growingFactor: 1.14999998
+  velocity: 5
+  gravityScale: 2
   growSound: {fileID: 8300000, guid: 8649125523985e94aad3efaf29fb70dc, type: 3}
   shrinkSound: {fileID: 8300000, guid: e1678ef6a4becc24eb3095de3817a229, type: 3}
 --- !u!114 &11492860
@@ -338,6 +340,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: jumpFactor
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
