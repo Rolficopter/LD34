@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 463486}
   - 61: {fileID: 6163686}
   - 212: {fileID: 21214074}
+  - 114: {fileID: 11473138}
   m_Layer: 8
   m_Name: Ceiling
   m_TagString: Untagged
@@ -24,8 +25,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .529999971, y: 2.76999998, z: 0}
-  m_LocalScale: {x: 1, y: 2.11547303, z: 1}
+  m_LocalPosition: {x: -15.2299995, y: 3.88000011, z: 0}
+  m_LocalScale: {x: 11, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -39,9 +40,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -3.81469727e-06, y: .211993724}
+  m_Offset: {x: -3.33786011e-06, y: .0143697262}
   serializedVersion: 2
-  m_Size: {x: 19.2013664, y: .576012194}
+  m_Size: {x: 10.2800798, y: 2.55224419}
+--- !u!114 &11473138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19447464ba0c22946a0abb91108c0a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21214074
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -68,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 603e66b2382e62b43bc50307d05ce988, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fe67dc689569cf5438d8144976653c71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: .377999991}
 --- !u!1001 &100100000
 Prefab:
