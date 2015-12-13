@@ -97,6 +97,7 @@ namespace Rolficopter.LD34.Assets.Scripts
         private void NextLevel()
         {
             Debug.Log("Ohjo!");
+            Application.LoadLevel(Constants.GetLevelName(Constants.Levels.LevelFinished));
         }
 
 

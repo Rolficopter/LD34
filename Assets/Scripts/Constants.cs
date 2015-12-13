@@ -8,6 +8,7 @@ namespace Rolficopter.LD34.Assets.Scripts
         {
             Menu,
             Level1,
+            LevelFinished,
             GameOver
         }
 
