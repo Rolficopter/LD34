@@ -14,7 +14,7 @@ namespace Rolficopter.LD34.Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetButtonDown("Submit"))
+            if (Input.GetButtonDown("Submit") || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
             {
                 this.StartGame();
             }
