@@ -4,6 +4,7 @@ public class PlayerControl : MonoBehaviour {
 
     Rigidbody2D mRigidBody;
     Transform mTransform;
+    AudioSource mAudioSource;
 
     public Transform groundCheck;
     public LayerMask groundMask;
@@ -14,10 +15,14 @@ public class PlayerControl : MonoBehaviour {
     [Tooltip("The amount the player grows with each jump and shrinks with each power-up.")]
     public float growingFactor = 1.01f;
 
+    public AudioClip growSound;
+    public AudioClip shrinkSound;
+
 	// Use this for initialization
 	void Start () {
         this.mRigidBody = GetComponent<Rigidbody2D>();
         this.mTransform = GetComponent<Transform>();
+        this.mAudioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -74,12 +79,16 @@ public class PlayerControl : MonoBehaviour {
     {
         Debug.Log("Growing player...");
         mTransform.localScale = new Vector3(mTransform.localScale.x * growingFactor, mTransform.localScale.y * growingFactor, 1);
+        this.mAudioSource.clip = growSound;
+        this.mAudioSource.Play();
     }
 
     private void Shrink()
     {
         Debug.Log("Shrinking player...");
         mTransform.localScale = new Vector3(mTransform.localScale.x / growingFactor, mTransform.localScale.y / growingFactor, 1);
+        this.mAudioSource.clip = shrinkSound;
+        this.mAudioSource.Play();
     }
 
     public void Die()

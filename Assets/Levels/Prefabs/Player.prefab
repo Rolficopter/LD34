@@ -144,10 +144,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24372350, guid: 54ed02cb68027914991376d28a37d1cf,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 71deb3233d407da4da5623e2653d5573, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: .296999991
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -221,6 +221,8 @@ MonoBehaviour:
     m_Bits: 256
   jumpFactor: 300
   growingFactor: 1.04999995
+  growSound: {fileID: 8300000, guid: 8649125523985e94aad3efaf29fb70dc, type: 3}
+  shrinkSound: {fileID: 8300000, guid: e1678ef6a4becc24eb3095de3817a229, type: 3}
 --- !u!114 &11492860
 MonoBehaviour:
   m_ObjectHideFlags: 1
