@@ -31,6 +31,8 @@ namespace Rolficopter.LD34.Assets.Scripts
         public int growSpeed = 50;
         private Vector3 mTargetScale;
 
+        private Vector3 startScale = Vector3.one;
+
         // Use this for initialization
         void Start()
         {
@@ -42,6 +44,7 @@ namespace Rolficopter.LD34.Assets.Scripts
             this.mAudioSource = GetComponent<AudioSource>();
 
             this.mTargetScale = mTransform.localScale;
+            this.startScale = this.mTargetScale;
         }
 
         // Update is called once per frame
@@ -145,16 +148,30 @@ namespace Rolficopter.LD34.Assets.Scripts
 
         private void Grow()
         {
-            Debug.Log("Growing player...");
             mTargetScale = new Vector3(mTargetScale.x * growingFactor, mTargetScale.y * growingFactor, 1);
+
+            if ( mTargetScale.y > this.startScale.y * 2 )
+            {
+                this.mTargetScale = this.startScale * 2;
+                return;
+            }
+
+            Debug.Log("Growing player...");
             this.mAudioSource.clip = growSound;
             this.mAudioSource.Play();
         }
 
         private void Shrink()
         {
-            Debug.Log("Shrinking player...");
             mTargetScale = new Vector3(mTargetScale.x / growingFactor, mTargetScale.y / growingFactor, 1);
+
+            if ( mTargetScale.y < this.startScale.y )
+            {
+                this.mTargetScale = this.startScale;
+                return;
+            }
+
+            Debug.Log("Shrinking player...");
             this.mAudioSource.clip = shrinkSound;
             this.mAudioSource.Play();
         }
