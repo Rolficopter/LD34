@@ -7,3 +7,4 @@ This is our Ludum Dare #34 entry.
 ## Blog posts
 
 - Entry: http://ludumdare.com/compo/2015/12/12/we-are-in-159/
+- Progress: http://ludumdare.com/compo/2015/12/13/progress-things/
