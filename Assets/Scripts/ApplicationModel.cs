@@ -7,6 +7,7 @@ namespace Rolficopter.LD34.Assets.Scripts
     {
 
         public static int currentLevel = -1;
+        public static Constants.Levels loadedLevel = Constants.Levels.Menu;
 
         // Use this for initialization
         void Start()

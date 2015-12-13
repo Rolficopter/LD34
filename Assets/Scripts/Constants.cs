@@ -2,12 +2,13 @@
 
 namespace Rolficopter.LD34.Assets.Scripts
 {
-    abstract class Constants
+    public abstract class Constants
     {
         public enum Levels
         {
             Menu,
             Level1,
+            Level2,
             LevelFinished,
             GameOver
         }

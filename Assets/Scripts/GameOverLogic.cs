@@ -17,7 +17,15 @@ namespace Rolficopter.LD34.Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            if (Input.GetButtonDown("Submit"))
+            {
+                this.LoadLastLevel();
+            }
+        }
 
+        private void LoadLastLevel()
+        {
+            Application.LoadLevel(Constants.GetLevelName(ApplicationModel.loadedLevel));
         }
     }
 }
