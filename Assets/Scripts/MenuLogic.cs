@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
 
 namespace Rolficopter.LD34.Assets.Scripts
 {
@@ -14,16 +15,27 @@ namespace Rolficopter.LD34.Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetButtonDown("Submit"))
+            if (Input.GetButtonDown("Submit") )
             {
                 this.StartGame();
             }
         }
 
+        private bool CanStartGame()
+        {
+            return Application.CanStreamedLevelBeLoaded(Constants.GetLevelName(Constants.Levels.Level1));
+        }
         private void StartGame()
         {
-            Debug.Log("Loading Level 1...");
-            Application.LoadLevel(Constants.GetLevelName(Constants.Levels.Level1));
+            if ( this.CanStartGame())
+            {
+                Debug.Log("Loading Level 1...");
+                Application.LoadLevel(Constants.GetLevelName(Constants.Levels.Level1));
+            }
+            else
+            {
+                Debug.Log("Level 1 not yet loaded.");
+            }
         }
     }
 }
