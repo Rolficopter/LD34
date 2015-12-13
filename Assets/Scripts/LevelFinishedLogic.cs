@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 namespace Rolficopter.LD34.Assets.Scripts
 {
@@ -21,8 +22,15 @@ namespace Rolficopter.LD34.Assets.Scripts
             {
                 int nextLevel = ApplicationModel.currentLevel + 1;
                 string nextLevelName = "Level" + nextLevel;
-
-                Application.LoadLevel(nextLevelName);
+                if (Application.CanStreamedLevelBeLoaded(nextLevelName))
+                {
+                    Application.LoadLevel(nextLevelName);
+                }
+                else
+                {
+                    Application.LoadLevel(Constants.GetLevelName(Constants.Levels.Menu));
+                }
+                
             }
         }
     }
