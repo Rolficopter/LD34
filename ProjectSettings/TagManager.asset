@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LeadsToDeath
+  - Tutorial
   layers:
   - Default
   - TransparentFX
