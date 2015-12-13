@@ -21,8 +21,6 @@ namespace Rolficopter.LD34.Assets.Scripts
         [Range(1.0f, 100.0f)]
         [Tooltip("The constant velocity of the player to the right.")]
         public float velocity = 5.0f;
-        [Range(1.0f, 5.0f)]
-        public float gravityScale = 2.0f;
 
         public AudioClip growSound;
         public AudioClip shrinkSound;
@@ -33,8 +31,6 @@ namespace Rolficopter.LD34.Assets.Scripts
             this.mRigidBody = GetComponent<Rigidbody2D>();
             this.mTransform = GetComponent<Transform>();
             this.mAudioSource = GetComponent<AudioSource>();
-
-            this.mRigidBody.gravityScale = this.gravityScale;
         }
 
         // Update is called once per frame
