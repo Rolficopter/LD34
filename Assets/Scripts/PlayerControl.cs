@@ -96,7 +96,8 @@ namespace Rolficopter.LD34.Assets.Scripts
                     {
                         powerUpLogic.Exhaust();
 
-                        this.Shrink();
+                        this.Shrink(); 
+
                     }
                 }
             }
@@ -165,11 +166,12 @@ namespace Rolficopter.LD34.Assets.Scripts
         {
             mTargetScale = new Vector3(mTargetScale.x / growingFactor, mTargetScale.y / growingFactor, 1);
 
-            if ( mTargetScale.y < this.startScale.y )
+            // WAT
+            /*if ( mTargetScale.y < this.startScale.y )
             {
                 this.mTargetScale = this.startScale;
                 return;
-            }
+            }*/
 
             Debug.Log("Shrinking player...");
             this.mAudioSource.clip = shrinkSound;

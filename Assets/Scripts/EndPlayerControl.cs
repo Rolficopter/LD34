@@ -15,7 +15,7 @@ public class EndPlayerControl : MonoBehaviour {
         mRigidBody = GetComponent<Rigidbody2D>();
         mSprite = GetComponent<SpriteRenderer>();
 
-        Invoke("Stop", 20);
+        Invoke("Stop", 7.5f);
 	}
 	
 	// Update is called once per frame
@@ -28,21 +28,33 @@ public class EndPlayerControl : MonoBehaviour {
             mSprite.color = Vector4.Lerp(mSprite.color, new Vector4(1, 1, 1, 0), Time.deltaTime);
             mAnimationSprite.color = mSprite.color;
 
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, 6, transform.position.z), Time.deltaTime * 0.5f);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, 6, transform.position.z), Time.deltaTime * 0.15f);
         }
 	}
 
     void Stop()
     {
         mWalking = false;
-        Invoke("Dissolve", 2);
+        Invoke("Continue", 6);
+    }
+
+    void Continue()
+    {
+        mWalking = true;
+        Invoke("Stop2", 1.5f);
+    }
+
+    void Stop2()
+    {
+        mWalking = false;
+        Invoke("Dissolve", 3);
     }
 
     void Dissolve()
     {
         mDissolving = true;
         mRigidBody.isKinematic = true;
-        Invoke("Finish", 5);
+        Invoke("Finish", 7);
     }
 
     void Finish()
