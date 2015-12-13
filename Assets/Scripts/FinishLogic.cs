@@ -10,7 +10,7 @@ public class FinishLogic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+        GetComponent<Light>().intensity = Random.Range(50, 100) / 100f;
 	}
 
 
