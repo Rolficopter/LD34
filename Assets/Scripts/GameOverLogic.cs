@@ -3,15 +3,15 @@ using System.Collections;
 
 namespace Rolficopter.LD34.Assets.Scripts
 {
-    public class LevelScript : MonoBehaviour
+    public class GameOverLogic : MonoBehaviour
     {
 
-        public int levelNumber = 1;
+        public UnityEngine.UI.Text deathText;
 
         // Use this for initialization
         void Start()
         {
-            ApplicationModel.currentLevel = levelNumber;
+            deathText.text = "You died in Level " + ApplicationModel.currentLevel + ".";
         }
 
         // Update is called once per frame
@@ -19,7 +19,5 @@ namespace Rolficopter.LD34.Assets.Scripts
         {
 
         }
-
-
     }
 }

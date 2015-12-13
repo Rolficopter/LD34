@@ -1,20 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraSideFollow : MonoBehaviour {
+namespace Rolficopter.LD34.Assets.Scripts
+{
+    public class CameraSideFollow : MonoBehaviour
+    {
 
-    public GameObject target;
+        public GameObject target;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        this.transform.position = new Vector3(
-            Mathf.Lerp(transform.position.x, target.transform.position.x, 1f * Time.deltaTime),
-            transform.position.y,
-            transform.position.z);
-	}
+        // Use this for initialization
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            this.transform.position = new Vector3(
+                Mathf.Lerp(transform.position.x, target.transform.position.x, 1f * Time.deltaTime),
+                transform.position.y,
+                transform.position.z);
+        }
+    }
 }
