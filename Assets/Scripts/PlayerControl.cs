@@ -27,6 +27,8 @@ namespace Rolficopter.LD34.Assets.Scripts
 
         private Vector2 mLastTouchPosition;
 
+        private Vector3 mTargetScale;
+
         // Use this for initialization
         void Start()
         {
@@ -36,6 +38,8 @@ namespace Rolficopter.LD34.Assets.Scripts
             this.mRigidBody = GetComponent<Rigidbody2D>();
             this.mTransform = GetComponent<Transform>();
             this.mAudioSource = GetComponent<AudioSource>();
+
+            this.mTargetScale = mTransform.localScale;
         }
 
         // Update is called once per frame
@@ -93,6 +97,8 @@ namespace Rolficopter.LD34.Assets.Scripts
             }
 
             mRigidBody.velocity = new Vector2(this.velocity, mRigidBody.velocity.y);
+
+            mTransform.localScale = Vector3.Lerp(mTransform.localScale, mTargetScale, Time.deltaTime * 10);
         }
 
         private GameObject GetCollidingPowerUp()
@@ -138,7 +144,7 @@ namespace Rolficopter.LD34.Assets.Scripts
         private void Grow()
         {
             Debug.Log("Growing player...");
-            mTransform.localScale = new Vector3(mTransform.localScale.x * growingFactor, mTransform.localScale.y * growingFactor, 1);
+            mTargetScale = new Vector3(mTargetScale.x * growingFactor, mTargetScale.y * growingFactor, 1);
             this.mAudioSource.clip = growSound;
             this.mAudioSource.Play();
         }
@@ -146,7 +152,7 @@ namespace Rolficopter.LD34.Assets.Scripts
         private void Shrink()
         {
             Debug.Log("Shrinking player...");
-            mTransform.localScale = new Vector3(mTransform.localScale.x / growingFactor, mTransform.localScale.y / growingFactor, 1);
+            mTargetScale = new Vector3(mTargetScale.x / growingFactor, mTargetScale.y / growingFactor, 1);
             this.mAudioSource.clip = shrinkSound;
             this.mAudioSource.Play();
         }
