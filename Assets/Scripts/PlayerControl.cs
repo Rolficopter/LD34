@@ -28,6 +28,9 @@ namespace Rolficopter.LD34.Assets.Scripts
         // Use this for initialization
         void Start()
         {
+#if UNITY_EDITOR
+            Input.simulateMouseWithTouches = true;
+#endif
             this.mRigidBody = GetComponent<Rigidbody2D>();
             this.mTransform = GetComponent<Transform>();
             this.mAudioSource = GetComponent<AudioSource>();
@@ -39,15 +42,23 @@ namespace Rolficopter.LD34.Assets.Scripts
             bool isPressingJump = Input.GetButtonDown("Jump");
             bool isPressingDown = Input.GetButtonDown("Shrink");
 
-            if (Input.touchCount > 0 && (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Stationary))
+            if (Input.touchCount > 0)
             {
-                if (Input.GetTouch(0).deltaPosition.y > 0)
+                for (int i = 0; i < Input.touchCount; i++)
                 {
-                    isPressingJump = true;
-                }
-                else if (Input.GetTouch(0).deltaPosition.y < 0)
-                {
-                    isPressingDown = true;
+                    Debug.Log(Input.GetTouch(i).phase);
+
+                    if (Input.GetTouch(i).phase == TouchPhase.Ended || Input.GetTouch(i).phase == TouchPhase.Stationary)
+                    {
+                        if (Input.GetTouch(i).deltaPosition.y > 0)
+                        {
+                            isPressingJump = true;
+                        }
+                        else if (Input.GetTouch(i).deltaPosition.y < 0)
+                        {
+                            isPressingDown = true;
+                        }
+                    }
                 }
             }
 
