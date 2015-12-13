@@ -36,13 +36,27 @@ namespace Rolficopter.LD34.Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetButtonDown("Jump") && groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(groundMask))
+            bool isPressingJump = Input.GetButtonDown("Jump");
+            bool isPressingDown = Input.GetButtonDown("Shrink");
+
+            if (Input.touchCount > 0 && (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Stationary))
+            {
+                if (Input.GetTouch(0).deltaPosition.y > 0)
+                {
+                    isPressingJump = true;
+                }
+                else if (Input.GetTouch(0).deltaPosition.y < 0)
+                {
+                    isPressingDown = true;
+                }
+            }
+
+            if (isPressingJump && groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(groundMask))
             {
                 mRigidBody.AddForce(Vector2.up * jumpFactor);
                 this.Grow();
             }
 
-            bool isPressingDown = Input.GetButtonDown("Shrink");
             if (isPressingDown)
             {
                 // check for down
