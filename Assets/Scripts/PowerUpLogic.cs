@@ -14,12 +14,15 @@ namespace Rolficopter.LD34.Assets.Scripts
 
         AudioSource mAudioSource;
 
+        ParticleSystem mParticleSystem;
+
         // Use this for initialization
         void Start()
         {
             mHalo = GetComponent<Light>();
             mInitialRange = mHalo.range;
             mAudioSource = GetComponent<AudioSource>();
+            mParticleSystem = GetComponent<ParticleSystem>();
         }
 
         // Update is called once per frame
@@ -38,6 +41,7 @@ namespace Rolficopter.LD34.Assets.Scripts
 
             this.mHalo.enabled = false;
             mAudioSource.enabled = false;
+            this.mParticleSystem.enableEmission = false;
 
             SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = this.exhaustedSprite;

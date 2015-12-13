@@ -876,22 +876,6 @@ Prefab:
       propertyPath: m_Name
       value: PowerUp 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8272840, guid: 852d2e6ca3c3222489e31b2e681b06f4, type: 2}
-      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8272840, guid: 852d2e6ca3c3222489e31b2e681b06f4, type: 2}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8272840, guid: 852d2e6ca3c3222489e31b2e681b06f4, type: 2}
-      propertyPath: MaxDistance
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8272840, guid: 852d2e6ca3c3222489e31b2e681b06f4, type: 2}
-      propertyPath: rolloffMode
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 852d2e6ca3c3222489e31b2e681b06f4, type: 2}
   m_IsPrefabParent: 0
