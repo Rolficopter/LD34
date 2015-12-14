@@ -19,6 +19,11 @@ namespace Rolficopter.LD34.Assets.Scripts
             {
                 this.StartGame();
             }
+            else if (Input.GetButtonDown("Cancel"))
+            {
+                Debug.Log("Exiting.");
+                Application.Quit();
+            }
         }
 
         private bool CanStartGame()

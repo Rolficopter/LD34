@@ -30,7 +30,12 @@ namespace Rolficopter.LD34.Assets.Scripts
                 {
                     Application.LoadLevel(Constants.GetLevelName(Constants.Levels.Menu));
                 }
-                
+
+            }
+            else if (Input.GetButtonDown("Cancel"))
+            {
+                Debug.Log("Exiting.");
+                Application.Quit();
             }
         }
     }

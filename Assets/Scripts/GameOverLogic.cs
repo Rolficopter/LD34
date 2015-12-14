@@ -21,6 +21,11 @@ namespace Rolficopter.LD34.Assets.Scripts
             {
                 this.LoadLastLevel();
             }
+            else if (Input.GetButtonDown("Cancel"))
+            {
+                Debug.Log("Exiting.");
+                Application.Quit();
+            }
         }
 
         private void LoadLastLevel()
