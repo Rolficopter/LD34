@@ -15,7 +15,7 @@ public class TutorialLogic : MonoBehaviour {
     private TutorialStep currentStep = TutorialStep.Start;
 
     private const float playerIntroDelay = 2.0f;
-    private const float cameraFollowDelay = playerIntroDelay + 1.0f;
+    private const float cameraFollowDelay = playerIntroDelay;
 
     // Use this for initialization
     void Start () {
@@ -40,33 +40,31 @@ public class TutorialLogic : MonoBehaviour {
 	void Update () {
         float time = Time.timeSinceLevelLoad;
 
-        switch (this.currentStep)
+        GameObject mainCamera = GameObject.Find("Main Camera");
+        if (mainCamera != null)
         {
-            case TutorialStep.Start:
-                if ( time >= playerIntroDelay )
-                {
-                    this.MakeTextVisible("PlayerIntro");
-                    this.MakeSpriteVisible("Player");
-
-                    this.currentStep = TutorialStep.IntroducePlayer;
-                }
-
-                break;
-
-            case TutorialStep.IntroducePlayer:
-                if ( time >= cameraFollowDelay )
-                {
-                    GameObject mainCamera = GameObject.Find("Main Camera");
-                    if ( mainCamera != null )
-                    {
-                        CameraSideFollow followScript = mainCamera.GetComponent<CameraSideFollow>();
-                        followScript.enabled = true;
-                    }
-
-                    this.currentStep = TutorialStep.CameraStartedFollowing;
-                }
-
-                break;
+            CameraSideFollow followScript = mainCamera.GetComponent<CameraSideFollow>();
+            followScript.enabled = true;
+        }
+        if (time > 4)
+        {
+            this.MakeTextVisible("what");
+        }
+        if (time > 10)
+        {
+            this.MakeTextVisible("am i alive");
+        }
+        if (time > 15)
+        {
+            this.MakeTextVisible("help");
+        }
+        if (time > 20)
+        {
+            this.MakeTextVisible("help (1)");
+        }
+        if (time > 26)
+        {
+            this.MakeTextVisible("PlayerIntro");
         }
 	}
 

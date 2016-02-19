@@ -50,8 +50,8 @@ namespace Rolficopter.LD34.Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            bool isPressingJump = Input.GetButtonDown("Jump");
-            bool isPressingDown = Input.GetButtonDown("Shrink");
+            bool isPressingJump = Input.GetButtonDown("Jump") || Input.GetAxis("Shrink") > 0;
+            bool isPressingDown = Input.GetAxis("Shrink") < 0;
 
             if (Input.touchCount > 0)
             {
@@ -181,7 +181,14 @@ namespace Rolficopter.LD34.Assets.Scripts
         public void Die()
         {
             Debug.Log("Player lost.");
-            Application.LoadLevel(Constants.GetLevelName(Constants.Levels.GameOver));
+            if (Application.loadedLevelName.Equals("Level1"))
+            {
+                this.mTransform.position = new Vector3(70, this.mTransform.position.y, this.mTransform.position.z);
+            }
+            else
+            {
+                Application.LoadLevel(Constants.GetLevelName(Constants.Levels.GameOver));
+            }
         }
     }
 }

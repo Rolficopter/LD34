@@ -18,7 +18,7 @@ namespace Rolficopter.LD34.Assets.Scripts
         void Update()
         {
             this.transform.position = new Vector3(
-                Mathf.Lerp(transform.position.x, target.transform.position.x, 1f * Time.deltaTime),
+                Mathf.Lerp(transform.position.x, target.transform.position.x + 6, Time.deltaTime),
                 transform.position.y,
                 transform.position.z);
         }
