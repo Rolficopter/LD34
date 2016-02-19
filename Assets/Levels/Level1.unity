@@ -283,7 +283,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115026, guid: 2965c1d6e25f05c4799df746c54e3dfd, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Tutorial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2965c1d6e25f05c4799df746c54e3dfd, type: 2}
@@ -937,7 +937,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115026, guid: 2965c1d6e25f05c4799df746c54e3dfd, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Tutorial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2965c1d6e25f05c4799df746c54e3dfd, type: 2}
@@ -1725,7 +1725,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115026, guid: 2965c1d6e25f05c4799df746c54e3dfd, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Tutorial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2965c1d6e25f05c4799df746c54e3dfd, type: 2}
@@ -2608,7 +2608,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115026, guid: 2965c1d6e25f05c4799df746c54e3dfd, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: Tutorial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2965c1d6e25f05c4799df746c54e3dfd, type: 2}
