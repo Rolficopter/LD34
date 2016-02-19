@@ -32,6 +32,8 @@ namespace Rolficopter.LD34.Assets.Scripts
         private Vector3 mTargetScale;
 
         private Vector3 startScale = Vector3.one;
+        private bool wasPressingDown;
+        private bool wasPressingUp;
 
         // Use this for initialization
         void Start()
@@ -50,9 +52,11 @@ namespace Rolficopter.LD34.Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            bool isPressingJump = Input.GetButtonDown("Jump") || Input.GetAxis("Shrink") > 0;
-            bool isPressingDown = Input.GetAxis("Shrink") < 0;
+            bool isPressingJump = (Input.GetButtonDown("Jump") || Input.GetAxis("Shrink") < 0);
+            bool isPressingDown = Input.GetAxis("Shrink") > 0;
 
+
+            
             if (Input.touchCount > 0)
             {
                 for (int i = 0; i < Input.touchCount; i++)
@@ -78,13 +82,13 @@ namespace Rolficopter.LD34.Assets.Scripts
                 }
             }
 
-            if (isPressingJump && groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(groundMask))
+            if (isPressingJump && !wasPressingUp && groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(groundMask))
             {
                 mRigidBody.AddForce(Vector2.up * jumpFactor);
                 this.Grow();
             }
 
-            if (isPressingDown)
+            if (isPressingDown && !wasPressingDown)
             {
                 // check for down
                 GameObject powerUp = this.GetCollidingPowerUp();
@@ -105,6 +109,9 @@ namespace Rolficopter.LD34.Assets.Scripts
             mRigidBody.velocity = new Vector2(this.velocity, mRigidBody.velocity.y);
 
             mTransform.localScale = Vector3.Lerp(mTransform.localScale, mTargetScale, Time.deltaTime * this.growSpeed);
+
+            wasPressingUp = isPressingJump;
+            wasPressingDown = isPressingDown;
         }
 
         private GameObject GetCollidingPowerUp()
@@ -150,7 +157,8 @@ namespace Rolficopter.LD34.Assets.Scripts
         private void Grow()
         {
             mTargetScale = new Vector3(mTargetScale.x * growingFactor, mTargetScale.y * growingFactor, 1);
-
+            this.mAudioSource.clip = growSound;
+            this.mAudioSource.Play();
             if ( mTargetScale.y > this.startScale.y * 2 )
             {
                 this.mTargetScale = this.startScale * 2;
@@ -158,8 +166,7 @@ namespace Rolficopter.LD34.Assets.Scripts
             }
 
             Debug.Log("Growing player...");
-            this.mAudioSource.clip = growSound;
-            this.mAudioSource.Play();
+            
         }
 
         private void Shrink()
@@ -184,6 +191,7 @@ namespace Rolficopter.LD34.Assets.Scripts
             if (Application.loadedLevelName.Equals("Level1"))
             {
                 this.mTransform.position = new Vector3(70, this.mTransform.position.y, this.mTransform.position.z);
+                this.mTargetScale = this.startScale;
             }
             else
             {
