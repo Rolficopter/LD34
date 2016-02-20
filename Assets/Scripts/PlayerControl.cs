@@ -32,6 +32,8 @@ namespace Rolficopter.LD34.Assets.Scripts
         private Vector3 mTargetScale;
 
         private Vector3 startScale = Vector3.one;
+        private bool isPressingJump;
+        private bool isPressingDown;
         private bool wasPressingDown;
         private bool wasPressingUp;
 
@@ -49,13 +51,22 @@ namespace Rolficopter.LD34.Assets.Scripts
             this.startScale = this.mTargetScale;
         }
 
+        void OnGUI()
+        {
+            if (Device.isMobileDevice())
+            {
+                if (GUI.Button(new Rect(Screen.width - 175, Screen.height - 100, 150, 75), "Jump"))
+                    isPressingJump = true;
+                if (GUI.Button(new Rect(25, Screen.height - 100, 150, 75), "Shrink"))
+                    isPressingDown = true;
+            }
+        }
+
         // Update is called once per frame
         void Update()
         {
-            bool isPressingJump = (Input.GetButtonDown("Jump") || Input.GetAxis("Shrink") < 0);
-            bool isPressingDown = Input.GetAxis("Shrink") > 0;
-
-
+            isPressingJump = (Input.GetButtonDown("Jump") || Input.GetAxis("Shrink") < 0) || isPressingJump;
+            isPressingDown = Input.GetAxis("Shrink") > 0 || isPressingDown;
             
             if (Input.touchCount > 0)
             {
@@ -112,6 +123,8 @@ namespace Rolficopter.LD34.Assets.Scripts
 
             wasPressingUp = isPressingJump;
             wasPressingDown = isPressingDown;
+            isPressingJump = false;
+            isPressingDown = false;
         }
 
         private GameObject GetCollidingPowerUp()
