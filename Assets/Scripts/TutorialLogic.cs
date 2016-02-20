@@ -4,19 +4,6 @@ using UnityEngine.UI;
 using Rolficopter.LD34.Assets.Scripts;
 
 public class TutorialLogic : MonoBehaviour {
-
-    private enum TutorialStep
-    {
-        Start,
-        IntroducePlayer,
-        CameraStartedFollowing
-    }
-
-    private TutorialStep currentStep = TutorialStep.Start;
-
-    private const float playerIntroDelay = 2.0f;
-    private const float cameraFollowDelay = playerIntroDelay;
-
     // Use this for initialization
     void Start () {
         GameObject[] allTexts = GameObject.FindGameObjectsWithTag("Tutorial");

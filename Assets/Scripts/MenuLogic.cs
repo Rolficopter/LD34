@@ -6,10 +6,19 @@ namespace Rolficopter.LD34.Assets.Scripts
     public class MenuLogic : MonoBehaviour
     {
 
+        public UnityEngine.UI.Text startText;
+
         // Use this for initialization
         void Start()
         {
-
+            if (Device.isMobileDevice())
+            {
+                startText.text = "Touch the Screen to Start.";
+            }
+            else if (Device.isControllerDevice())
+            {
+                startText.text = "Press A to Start.";
+            }
         }
 
         // Update is called once per frame
