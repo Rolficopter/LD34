@@ -21,7 +21,7 @@ public class Device : MonoBehaviour {
 
     public static bool isAndroidTv()
     {
-        if(SystemInfo.deviceModel.Equals("Amazon AFTB")) return true;
+        if (SystemInfo.deviceModel.Equals("Amazon AFTB") || SystemInfo.deviceModel.Equals("Amazon AFTM")) return true;
  
 #if UNITY_ANDROID
         return Input.GetJoystickNames().Length > 0;
