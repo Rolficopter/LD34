@@ -179,6 +179,16 @@ namespace Rolficopter.LD34.Assets.Scripts
             {
                 this.mTransform.position = new Vector3(70, this.mTransform.position.y, this.mTransform.position.z);
                 this.mTargetScale = this.startScale;
+                
+                GameObject[] allTexts = GameObject.FindGameObjectsWithTag("PowerUp");
+                foreach (var text in allTexts)
+                {
+                    PowerUpLogic powerUp = text.GetComponent<PowerUpLogic>();
+                    if (powerUp != null)
+                    {
+                        powerUp.Reset();
+                    }
+                }
             }
             else
             {

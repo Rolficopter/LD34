@@ -14,15 +14,15 @@ namespace Rolficopter.LD34.Assets.Scripts
         void Start()
         {
             deathText.text = "You finished Level " + ApplicationModel.currentLevel + ".";
-
-            if (Device.isMobileDevice())
-            {
-                contText.text = "Touch the Screen to continue.";
-            }
-            else if (Device.isControllerDevice())
+            if (Device.isControllerDevice())
             {
                 contText.text = "Press A to continue.";
             }
+            else if (Device.isMobileDevice())
+            {
+                contText.text = "Touch the Screen to continue.";
+            }
+             
         }
 
         // Update is called once per frame

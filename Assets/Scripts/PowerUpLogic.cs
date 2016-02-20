@@ -8,6 +8,7 @@ namespace Rolficopter.LD34.Assets.Scripts
 
         public bool isExhausted = false;
         public Sprite exhaustedSprite = null;
+        public Sprite notExhaustedSprite = null;
 
         Light mHalo;
         float mInitialRange;
@@ -45,6 +46,18 @@ namespace Rolficopter.LD34.Assets.Scripts
 
             SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = this.exhaustedSprite;
+        }
+
+        public void Reset()
+        {
+            this.isExhausted = false;
+
+            this.mHalo.enabled = true;
+            mAudioSource.enabled = true;
+            this.mParticleSystem.enableEmission = true;
+
+            SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = this.notExhaustedSprite;
         }
     }
 }

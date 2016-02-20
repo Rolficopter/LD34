@@ -5,7 +5,7 @@ public class MobileInputHider : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (!Device.isMobileDevice()) {
+        if (!Device.isMobileDevice() || Device.isAndroidTv()) {
             this.GetComponent<Canvas>().enabled = false;
         }
 	}

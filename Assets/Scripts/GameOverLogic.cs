@@ -13,14 +13,13 @@ namespace Rolficopter.LD34.Assets.Scripts
         void Start()
         {
             deathText.text = "You died in Level " + ApplicationModel.currentLevel + ".";
-
+            if (Device.isControllerDevice())
+            {
+                restartText.text = "Press A to Restart.";
+            }
             if (Device.isMobileDevice())
             {
                 restartText.text = "Touch the Screen to Restart.";
-            }
-            else if (Device.isControllerDevice())
-            {
-                restartText.text = "Press A to Restart.";
             }
         }
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LeadsToDeath
   - Tutorial
+  - PowerUp
   layers:
   - Default
   - TransparentFX

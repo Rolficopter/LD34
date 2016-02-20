@@ -11,13 +11,13 @@ namespace Rolficopter.LD34.Assets.Scripts
         // Use this for initialization
         void Start()
         {
-            if (Device.isMobileDevice())
-            {
-                startText.text = "Touch the Screen to Start.";
-            }
-            else if (Device.isControllerDevice())
+            if (Device.isControllerDevice())
             {
                 startText.text = "Press A to Start.";
+            }
+            else if (Device.isMobileDevice())
+            {
+                startText.text = "Touch the Screen to Start.";
             }
         }
 
