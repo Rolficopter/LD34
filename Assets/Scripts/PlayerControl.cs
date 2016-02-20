@@ -25,8 +25,6 @@ namespace Rolficopter.LD34.Assets.Scripts
         public AudioClip growSound;
         public AudioClip shrinkSound;
 
-        private Vector2 mLastTouchPosition;
-
         [Range(1.0f, 100.0f)]
         public int growSpeed = 50;
         private Vector3 mTargetScale;
@@ -56,31 +54,7 @@ namespace Rolficopter.LD34.Assets.Scripts
         {
             isPressingJump = (Input.GetButtonDown("Jump") || Input.GetAxis("Shrink") < 0) || isPressingJump;
             isPressingDown = Input.GetAxis("Shrink") > 0 || isPressingDown;
-            
-            if (Input.touchCount > 0)
-            {
-                for (int i = 0; i < Input.touchCount; i++)
-                {
-                    if (Input.GetTouch(i).phase == TouchPhase.Began)
-                    {
-                        mLastTouchPosition = Input.GetTouch(i).position;
-                    }
-
-                    if (Input.GetTouch(i).phase == TouchPhase.Ended || Input.GetTouch(i).phase == TouchPhase.Stationary)
-                    {
-                        Vector2 deltaPosition = Input.GetTouch(i).position - mLastTouchPosition;
-
-                        if (deltaPosition.y > 0)
-                        {
-                            isPressingJump = true;
-                        }
-                        else if (deltaPosition.y < 0)
-                        {
-                            isPressingDown = true;
-                        }
-                    }
-                }
-            }
+           
 
             if (isPressingJump && !wasPressingUp && groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(groundMask))
             {
