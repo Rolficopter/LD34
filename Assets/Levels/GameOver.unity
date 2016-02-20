@@ -522,3 +522,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathText: {fileID: 408827137}
+  restartText: {fileID: 1088810546}

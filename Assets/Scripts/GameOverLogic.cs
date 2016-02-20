@@ -7,11 +7,21 @@ namespace Rolficopter.LD34.Assets.Scripts
     {
 
         public UnityEngine.UI.Text deathText;
+        public UnityEngine.UI.Text restartText;
 
         // Use this for initialization
         void Start()
         {
             deathText.text = "You died in Level " + ApplicationModel.currentLevel + ".";
+
+            if (Device.isMobileDevice())
+            {
+                restartText.text = "Touch the Screen to Restart.";
+            }
+            else if (Device.isControllerDevice())
+            {
+                restartText.text = "Press A to Restart.";
+            }
         }
 
         // Update is called once per frame
