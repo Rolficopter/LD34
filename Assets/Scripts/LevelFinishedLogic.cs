@@ -8,11 +8,21 @@ namespace Rolficopter.LD34.Assets.Scripts
     {
 
         public UnityEngine.UI.Text deathText;
+        public UnityEngine.UI.Text contText;
 
         // Use this for initialization
         void Start()
         {
             deathText.text = "You finished Level " + ApplicationModel.currentLevel + ".";
+
+            if (Device.isMobileDevice())
+            {
+                contText.text = "Touch the Screen to continue.";
+            }
+            else if (Device.isControllerDevice())
+            {
+                contText.text = "Press A to continue.";
+            }
         }
 
         // Update is called once per frame

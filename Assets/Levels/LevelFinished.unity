@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathText: {fileID: 1108921349}
+  contText: {fileID: 1833094186}
 --- !u!82 &1774077433
 AudioSource:
   m_ObjectHideFlags: 0

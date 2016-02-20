@@ -51,17 +51,6 @@ namespace Rolficopter.LD34.Assets.Scripts
             this.startScale = this.mTargetScale;
         }
 
-        void OnGUI()
-        {
-            if (Device.isMobileDevice())
-            {
-                if (GUI.Button(new Rect(Screen.width - 175, Screen.height - 100, 150, 75), "Jump"))
-                    isPressingJump = true;
-                if (GUI.Button(new Rect(25, Screen.height - 100, 150, 75), "Shrink"))
-                    isPressingDown = true;
-            }
-        }
-
         // Update is called once per frame
         void Update()
         {
@@ -95,6 +84,7 @@ namespace Rolficopter.LD34.Assets.Scripts
 
             if (isPressingJump && !wasPressingUp && groundCheck.GetComponent<BoxCollider2D>().IsTouchingLayers(groundMask))
             {
+                Jump();
                 mRigidBody.AddForce(Vector2.up * jumpFactor);
                 this.Grow();
             }
@@ -125,6 +115,16 @@ namespace Rolficopter.LD34.Assets.Scripts
             wasPressingDown = isPressingDown;
             isPressingJump = false;
             isPressingDown = false;
+        }
+
+        public void Jump()
+        {
+            isPressingJump = true;
+        }
+
+        public void DeJump()
+        {
+            isPressingDown = true;
         }
 
         private GameObject GetCollidingPowerUp()
