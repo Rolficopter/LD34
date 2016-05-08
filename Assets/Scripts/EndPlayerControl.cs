@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EndPlayerControl : MonoBehaviour {
 
@@ -59,6 +60,6 @@ public class EndPlayerControl : MonoBehaviour {
 
     void Finish()
     {
-        Application.LoadLevel(Rolficopter.LD34.Assets.Scripts.Constants.Levels.Menu.ToString());
+		SceneManager.LoadScene (Rolficopter.LD34.Assets.Scripts.Constants.Levels.Menu.ToString ());
     }
 }

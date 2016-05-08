@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace Rolficopter.LD34.Assets.Scripts
 {
@@ -39,7 +40,7 @@ namespace Rolficopter.LD34.Assets.Scripts
 
         private void LoadLastLevel()
         {
-            Application.LoadLevel(Constants.GetLevelName(ApplicationModel.loadedLevel));
+			SceneManager.LoadScene(Constants.GetLevelName(ApplicationModel.loadedLevel));
         }
     }
 }

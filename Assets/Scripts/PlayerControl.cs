@@ -1,5 +1,6 @@
 ﻿using Rolficopter.LD34.Assets.Scripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Rolficopter.LD34.Assets.Scripts
 {
@@ -137,7 +138,7 @@ namespace Rolficopter.LD34.Assets.Scripts
         private void NextLevel()
         {
             Debug.Log("Ohjo!");
-            Application.LoadLevel(Constants.GetLevelName(Constants.Levels.LevelFinished));
+			SceneManager.LoadScene(Constants.GetLevelName(Constants.Levels.LevelFinished));
         }
 
 
@@ -175,7 +176,7 @@ namespace Rolficopter.LD34.Assets.Scripts
         public void Die()
         {
             Debug.Log("Player lost.");
-            if (Application.loadedLevelName.Equals("Level1"))
+			if (SceneManager.GetActiveScene().name.Equals("Level1"))
             {
                 this.mTransform.position = new Vector3(70, this.mTransform.position.y, this.mTransform.position.z);
                 this.mTargetScale = this.startScale;
@@ -192,7 +193,7 @@ namespace Rolficopter.LD34.Assets.Scripts
             }
             else
             {
-                Application.LoadLevel(Constants.GetLevelName(Constants.Levels.GameOver));
+				SceneManager.LoadScene(Constants.GetLevelName(Constants.Levels.GameOver));
             }
         }
     }

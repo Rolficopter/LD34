@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Rolficopter.LD34.Assets.Scripts
 {
@@ -44,7 +45,7 @@ namespace Rolficopter.LD34.Assets.Scripts
             if ( this.CanStartGame())
             {
                 Debug.Log("Loading Level 1...");
-                Application.LoadLevel(Constants.GetLevelName(Constants.Levels.Level1));
+				SceneManager.LoadScene(Constants.GetLevelName(Constants.Levels.Level1));
             }
             else
             {
