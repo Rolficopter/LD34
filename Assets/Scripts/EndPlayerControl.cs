@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Rolficopter.LD34.Assets.Scripts;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 public class EndPlayerControl : MonoBehaviour {
 
     Rigidbody2D mRigidBody;
     SpriteRenderer mSprite;
     public SpriteRenderer mAnimationSprite;
+	public PlayerControl playerLogic;
 
     bool mWalking = true;
     bool mDissolving = false;
@@ -60,6 +63,8 @@ public class EndPlayerControl : MonoBehaviour {
 
     void Finish()
     {
+		SocialIntegration.SubmitDeathsScore ();
+
 		SceneManager.LoadScene (Rolficopter.LD34.Assets.Scripts.Constants.Levels.Menu.ToString ());
     }
 }

@@ -36,6 +36,8 @@ namespace Rolficopter.LD34.Assets.Scripts
         private bool wasPressingDown;
         private bool wasPressingUp;
 
+		private long deaths = 0;
+
         // Use this for initialization
         void Start()
         {
@@ -175,6 +177,8 @@ namespace Rolficopter.LD34.Assets.Scripts
 
         public void Die()
         {
+			SocialIntegration.deaths += 1;
+
             Debug.Log("Player lost.");
 			if (SceneManager.GetActiveScene().name.Equals("Level1"))
             {
@@ -196,5 +200,9 @@ namespace Rolficopter.LD34.Assets.Scripts
 				SceneManager.LoadScene(Constants.GetLevelName(Constants.Levels.GameOver));
             }
         }
+
+		public long GetDeaths() {
+			return this.deaths;
+		}
     }
 }
